@@ -8,9 +8,15 @@ class Rectsearch extends React.Component{
     }
 
     handleFilter(e){
-        let filter = e.target.parentNode.nextElementSibling;
-        console.log(e.target.parentNode.nextElementSibling);
-        filter.classList.toggle('hidden');
+        console.log(e);
+        if(e.target.parentNode.className === "rect-search"){
+           let filter = e.target.parentNode.nextElementSibling;
+           filter.classList.toggle('hidden');
+        }
+        else{
+            let filter = e.target.parentNode.parentNode.nextElementSibling;
+            filter.classList.toggle('hidden');
+        }
     }
     
     render(){
